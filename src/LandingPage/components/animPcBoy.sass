@@ -1,0 +1,30 @@
+.placingDiv
+    width: 100%
+    display: flex
+    justify-content: flex-end
+
+#Head
+    transform: rotateZ(-15deg)
+    animation: headAnimation 5s ease infinite alternate
+    transform-origin: center
+    transform-box: fill-box
+
+@keyframes headAnimation
+    0%
+        transform: rotateZ(-15deg)
+    100%
+        transform: rotateZ(-30deg)
+
+#armBot
+    animation: armBotAnimation 2s infinite alternate
+    transform-origin: bottom
+    transform-box: fill-box
+
+@keyframes armBotAnimation
+
+    100%
+
+        transform: rotateZ(10deg) translate(2px, -2px)
+
+
+        
