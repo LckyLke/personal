@@ -8,3 +8,31 @@
 %transformCorrection
     transform-origin: center
     transform-box: fill-box
+
+#shootingStarTop
+    fill-opacity: 0
+    animation: shootingStarTopAnim 10s 2s infinite
+
+@keyframes shootingStarTopAnim
+    0%
+        
+        transform: translate(140px,-140px)
+    2.5%
+        fill-opacity: 1
+    5%
+        fill-opacity: 0
+        transform: translate(-130px, 130px)
+
+#shootingStarBot
+    fill-opacity: 0
+    animation: shootingStarBotAnim 10s 7s infinite 
+
+@keyframes shootingStarBotAnim
+    0%
+        transform: translate(250px,-250px)
+    2.5%
+        fill-opacity: 1
+    5%
+        fill-opacity: 0
+        transform: translate(-60px, 60px)
+        
