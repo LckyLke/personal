@@ -3,9 +3,7 @@ import "./carGuy.sass"
 
 const carGuy = (props) => {
   return (
-    <div className="placingDiv" style={
-        props.scrollRenderDecider(2)
-    }>
+    <div className="placingDiv">
       <svg
         width="60vw"
         height="90vh"

@@ -3,9 +3,7 @@ import "./animPcBoy.sass";
 
 const animPcBoy = (props) => {
   return (
-    <div className="placingDiv" style={
-      props.scrollRenderDecider(1)
-  }>
+    <div className="placingDiv" >
       <svg
         width="60vw"
         height="90vh"
