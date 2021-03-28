@@ -1,9 +1,11 @@
 import React from "react";
 import "./animPcBoy.sass";
 
-const animPcBoy = () => {
+const animPcBoy = (props) => {
   return (
-    <div className="placingDiv">
+    <div className="placingDiv" style={
+      props.scrollRenderDecider(1)
+  }>
       <svg
         width="60vw"
         height="90vh"

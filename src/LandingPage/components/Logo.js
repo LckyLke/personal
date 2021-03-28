@@ -6,8 +6,9 @@ const Logo = () => {
     <div className="logoContainer">
       <svg
         
-        height="20vh"
-        viewBox="0 0 800 800"
+        
+        width="5vw"
+        viewBox="0 0 650 800"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
