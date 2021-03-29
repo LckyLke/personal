@@ -11,10 +11,10 @@ const SwitchRouter = () => {
   const location = useLocation()
   
   return(
-    <AnimatePresence>
+    <AnimatePresence exitBeforeEnter>
           <Switch location={location} key={location.key}>
             <Route path="/about" component={Aboutpage}/>
-            <Route path="/" component={Homepage} />
+            <Route exact path="/" component={Homepage} />
             
           </Switch>
     </AnimatePresence>
@@ -22,16 +22,17 @@ const SwitchRouter = () => {
 }
 
 const Startpage = () => {
-  const [sidebarWidth, setSidebarWidth] = useState("7vw");
+ 
   
 
   return (
     <div className="main">
-      <Router>
-      <NavigationMenu sidebarWidth={sidebarWidth} />
       
+      <NavigationMenu/>
+        <div className="positionSubPages">
         <SwitchRouter/>
-      </Router>
+        </div>
+      
     </div>
   );
 };

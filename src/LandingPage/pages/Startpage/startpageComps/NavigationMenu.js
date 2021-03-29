@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+import "./NavigationMenu.sass"
 
 import {
   AiOutlineHome,
@@ -9,39 +10,58 @@ import {
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 
-const NavigationMenu = (props) => {
-  const navVariants = {
-    hover: {
-      scale: 1.3,
-      color: "#68ff00",
-      transition: {
-        duration: 0.6,
-        type: "spring",
-        stiffness: 500,
-        scale: { yoyo: Infinity, duration: 0.8 },
-        color: { type: "tween", duration: 0.5 },
-      },
+const navVariants = {
+  hover: {
+    scale: 1.3,
+    color: "#68ff00",
+    transition: {
+      duration: 0.6,
+      type: "spring",
+      stiffness: 500,
+      scale: { yoyo: Infinity, duration: 0.8 },
+      color: { type: "tween", duration: 0.5 },
     },
-  };
+  },
+};
+
+const navMountVariants = {
+  hidden: {
+    x: "-5vw"
+  },
+  visible: {
+    x: 0,
+    transition: {duration: .1}
+  }
+}
+
+const NavigationMenu = (props) => {
+ 
+  
+
+  
+
   return (
-    <nav
+    <motion.nav
       className="navSidebar"
       style={{
         transition: "1s",
-        width: props.sidebarWidth,
+        width: "5vw"
       }}
+      variants={navMountVariants}
+      initial="hidden"
+      animate="visible"
     >
       <div>
         <span>Logo</span>
       </div>
       <div className="nav">
-        <NavLink exact to="/" activeStyle={{ color: "#68ff00"}}>
+        <NavLink exact to="/" style={{color: "white"}} activeStyle={{backgroundColor: "grey"}}>
           <motion.div variants={navVariants} whileHover="hover">
-            <AiOutlineHome size="2rem" />
+            <AiOutlineHome size="2rem"/>
           </motion.div>
         </NavLink>
 
-        <NavLink to="/about" activeStyle={{ color: "#68ff00" }}>
+        <NavLink to="/about" style={{color: "white"}} activeStyle={{backgroundColor: "grey"}}>
           <motion.div variants={navVariants} whileHover="hover">
             <AiOutlineUser size="2rem" />
           </motion.div>
@@ -57,7 +77,7 @@ const NavigationMenu = (props) => {
       <div>
         <div>©2021</div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

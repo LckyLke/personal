@@ -44,12 +44,14 @@ const reactVariants = {
   },
   visible: {
     y: 0,
+  
     scale: 1.1,
     transition: {
       duration: 0.5,
       type: "spring",
       stiffness: 70,
       scale: { yoyo: Infinity, duration: 3, ease: "easeInOut" },
+      
     },
   },
   exit: {
@@ -58,6 +60,14 @@ const reactVariants = {
     transition: { duration: 0.5, type: "spring", stiffness: 70 },
   },
 };
+
+const hompageVariants = {
+  exit: {
+    y: "100vh",
+    scale: 0.1,
+    transition: {y: {duration: .6, when: "afterChildren"}, scale: {duration: .3}}
+  }
+}
 
 
 const Homepage = (props) => {
@@ -100,11 +110,12 @@ const Homepage = (props) => {
   }, []);
 
   return (
-    <motion.div className="homepageContainer">
+    <motion.div className="homepageContainer" variants={hompageVariants} exit="exit">
       <motion.div
         className="AboutTextField"
         animate={{ x: 0 }}
         initial={{ x: "100vw" }}
+        transition={{duration: .5, type: "spring", stiffness: 50}}
       >
         <h1>{destructureStringAndAssingClassForChar("I'm Luke.", "char")}</h1>
         <span className="subText">A fullstack developer and web designer.</span>
