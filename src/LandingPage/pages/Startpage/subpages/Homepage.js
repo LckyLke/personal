@@ -65,7 +65,7 @@ const hompageVariants = {
   exit: {
     y: "100vh",
     scale: 0.1,
-    transition: {y: {duration: .6, when: "afterChildren"}, scale: {duration: .3}}
+    transition: {y: {duration: .6}, scale: {duration: .3}}
   }
 }
 
