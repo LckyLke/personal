@@ -1,0 +1,38 @@
+.placingDiv
+    width: 60vw
+    height: 100vh
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    
+%transformCorrection
+    transform-origin: center
+    transform-box: fill-box
+
+%tire
+    @extend %transformCorrection
+    animation: tireRot .7s linear infinite 
+
+@keyframes tireRot
+    100%
+        transform: rotateZ(-360deg)
+
+#fronttire
+    @extend %tire
+#backtire
+    @extend %tire
+
+#headlights > path
+    animation: headlightsanim 5s 1s infinite 
+    
+
+@keyframes headlightsanim
+    2.5%
+        fill: #fefdf9
+    5%    
+        fill: #FFEC9F
+    7.5%
+        fill: #fefdf9
+    10%
+        fill: #ffec9f
+        
