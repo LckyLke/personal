@@ -1,6 +1,6 @@
 import './App.css';
 
-import Startpage from "./LandingPage/pages/Startpage/Startpage"
+import Startpage from "./Startpage/Startpage"
 import {BrowserRouter as Router} from "react-router-dom"
 
 function App() {
