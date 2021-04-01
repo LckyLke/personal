@@ -1,16 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
-
-const iconTextMap = (arr) =>
-  arr.map(({ icon, text }) => (
-    <span
-      id={text}
-      style={{ display: "flex", alignItems: "center", fontSize: "2rem" }}
-    >
-      {icon}
-      {`${text}.`}
-    </span>
-  ));
+import { motion, AnimatePresence } from "framer-motion";
 
 const AboutContentComp = ({
   h1text,
@@ -20,37 +9,61 @@ const AboutContentComp = ({
   i,
   selectedAbout,
   onClick,
+  additionalInformation
 }) => {
+  const iconTextMap = (arr) =>
+    arr.map(({ icon, text }, indexIconTextMap) => (
+        <div>
+            <motion.span 
+                transition={{duration: 2}}
+                layout
+                id={text}
+                style={{ display: "flex", alignItems: "center", fontSize: "2rem" }}
+            >
+                {icon}
+                {`${text}.`}
+            </motion.span>
+            <AnimatePresence>{selectedAbout === i&&(<motion.span initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>{additionalInformation[indexIconTextMap]}</motion.span>)}</AnimatePresence>
+        </div>
+    ));
+
   return (
     <motion.div
+        
       onClick={onClick}
       id={i}
       variants={variants}
-      style={style}
+      
       initial="hidden"
       animate="visible"
       exit="exit"
+      
       className="aboutContainer"
+      style={{...style}}
+      
+      
     >
-      <h1 style={{ fontSize: "3rem" }}>{h1text}</h1>
+      <motion.h1 layout style={{ fontSize: "3rem" }}>{h1text}</motion.h1>
       <div>{iconTextMap(iconText)}</div>
       {selectedAbout === i && (
         <motion.div
+          layout  
           layoutId="outline"
           initial={false}
           style={{
-            
             borderRadius: "5%",
             width: "100%",
             height: "100%",
             border: "solid",
             borderWidth: "5px",
-            borderColor: "white",
+            borderColor: "#68ff00",
             position: "absolute",
           }}
-          
           transition={{
-              duration: .4
+            duration: 5,
+            type: "spring",
+            stiffness: 500,
+            damping: 30,
           }}
         ></motion.div>
       )}
