@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  text-shadow: 2px 2px 1px rgba(150, 150, 150, 0.8);
 }
 
 body {

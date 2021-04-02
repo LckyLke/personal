@@ -18,18 +18,18 @@ const AboutContentComp = ({
                 transition={{duration: 2}}
                 layout
                 id={text}
-                style={{ display: "flex", alignItems: "center", fontSize: "2rem" }}
+                style={{ display: "flex", alignItems: "center", fontSize: "2rem"}}
             >
                 {icon}
                 {`${text}.`}
             </motion.span>
-            <AnimatePresence>{selectedAbout === i&&(<motion.span initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>{additionalInformation[indexIconTextMap]}</motion.span>)}</AnimatePresence>
+            <AnimatePresence>{selectedAbout === i&&(<motion.span layout initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>{additionalInformation[indexIconTextMap]}</motion.span>)}</AnimatePresence>
         </div>
     ));
 
   return (
     <motion.div
-        
+      
       onClick={onClick}
       id={i}
       variants={variants}
