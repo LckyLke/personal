@@ -13,7 +13,18 @@ const AboutContentComp = ({
 }) => {
   const iconTextMap = (arr) =>
     arr.map(({ icon, text }, indexIconTextMap) => (
-        <div>
+        <AnimatePresence>
+            {selectedAbout === i ? (<><motion.span 
+                transition={{duration: 2}}
+                layout
+                id={text}
+                style={{ display: "flex", alignItems: "center", fontSize: "2rem"}}
+            >
+                {icon}
+                {`${text}.`}
+            </motion.span>
+            <motion.span layout initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>{additionalInformation[indexIconTextMap]}</motion.span></>)  
+            :
             <motion.span 
                 transition={{duration: 2}}
                 layout
@@ -23,8 +34,9 @@ const AboutContentComp = ({
                 {icon}
                 {`${text}.`}
             </motion.span>
-            <AnimatePresence>{selectedAbout === i&&(<motion.span layout initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>{additionalInformation[indexIconTextMap]}</motion.span>)}</AnimatePresence>
-        </div>
+          }
+
+        </AnimatePresence>
     ));
 
   return (

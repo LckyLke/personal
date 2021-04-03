@@ -67,9 +67,13 @@ const NavigationMenu = (props) => {
           </motion.div>
         </NavLink>
 
-        <motion.div variants={navVariants} whileHover="hover">
-          <AiOutlineMail size="2rem" />
-        </motion.div>
+        <NavLink to="/conatct" style={{color: "white"}} activeStyle={{backgroundColor: "grey"}}>
+          <motion.div variants={navVariants} whileHover="hover">
+            <AiOutlineMail size="2rem" />
+          </motion.div>
+        </NavLink>
+
+
         <motion.div variants={navVariants} whileHover="hover">
           <AiOutlineSetting size="2rem" />
         </motion.div>
